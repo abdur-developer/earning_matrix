@@ -1,0 +1,13 @@
+.color-change-img {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: auto;
+    filter: brightness(0) invert(1) grayscale(100%); /* Adjust the brightness value as needed */
+}
+.color-img {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
