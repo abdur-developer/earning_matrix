@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Section</title>
+    <title>Lottery Section</title>
     <link href='../../bootstrap/css/bootstrap.min.css' rel='stylesheet'>
     <style>
         .card {
@@ -21,17 +21,17 @@
             echo "Worng , Contact Developer.....";
         } ?>
     </p>
-    <div><a class="btn btn-primary mt-2" href="premium-details/add.php"><b>+</b> Add New</a></div>
+    <div><a class="btn btn-primary mt-2" href="lottary-details/add.php"><b>+</b> Add New</a></div>
         <div class="row">
             <?php
                 require '../../includes/dbconnect.php';
-                $sql = "SELECT * FROM premium";
+                $sql = "SELECT * FROM lottary";
                 $query = mysqli_query($conn,$sql);
                 $num_of_rows = mysqli_num_rows($query);
                 if($num_of_rows > 0){
                     while($row = mysqli_fetch_array($query)){
                         $id = $row['id'];
-                        $name = $row['vip_name'];
+                        $name = $row['title'];
                         $price = $row['price'];
                         ?>
                         <div class='col-md-4 col-xl-3 px-sm-3 mt-3'>
@@ -46,18 +46,18 @@
                                         <div class='col-4'> 
                                             
                                             <?php
-                                            if($row['status'] == 1){
-                                                echo "<a class='btn btn-success' href='premium-details/status.php?action=0&id=$id'>Active</a>";
+                                            if($row['status'] == 'Approved'){
+                                                echo "<a class='btn btn-success' href='lottary-details/status.php?action=Inactive&id=$id'>Active</a>";
                                             }else{
-                                                echo "<a class='btn btn-warning' href='premium-details/status.php?action=1&id=$id'>Inactive</a>";
+                                                echo "<a class='btn btn-warning' href='lottary-details/status.php?action=Approved&id=$id'>Inactive</a>";
                                             }
                                             ?>
                                         </div>
+                                        <!-- <div class='col-4'>
+                                            <a class='btn btn-secondary' href='lottary-details/update.php?id=<?= $id ?>'>Update</a>
+                                        </div> -->
                                         <div class='col-4'>
-                                            <a class='btn btn-secondary' href='premium-details/update.php?id=<?= $id ?>'>Update</a>
-                                        </div>
-                                        <div class='col-4'>
-                                            <a class='btn btn-danger' href='premium-details/delete.php?id=<?= $id ?>'>Delete</a>
+                                            <a class='btn btn-danger' href='lottary-details/delete.php?id=<?= $id ?>'>Delete</a>
                                         </div>
                                     </div>
                                     

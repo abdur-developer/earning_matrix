@@ -144,6 +144,19 @@ if(isset($_COOKIE['login'])){
                     </div>
                     
                 </div>
+                <div class="card col-lg-5 mx-3 p-2 mb-3" style="background-color: chartreuse;">
+                    <div class="row card-body">
+                        <div class="user-sec text-black col-9">
+                            <h2 class="card-title text-left">Lottery Section</h2>
+                            <p class="card-text text-left">earning matrix</p>
+                            <a href="section/lott-sec.php" class="stretched-link"></a>
+                        </div>
+                        <div class="col-3"  style='color:#ffffff font-size: 70px;' >
+                            <img src="arrow.png" alt="" class="color-img" >
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
             
         </div>

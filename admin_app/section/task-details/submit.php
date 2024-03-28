@@ -23,26 +23,6 @@
     </p>
         <div class="row">
             <?php
-                function decryptNumber($encrypted, $key){
-                    $chiper = 'aes-256-cbc';
-                    $data = base64_decode($encrypted);
-                    $iv_lenght = openssl_cipher_iv_length($chiper);
-                    $iv = substr($data, 0, $iv_lenght);
-                    $encrypted = substr($data, $iv_lenght);
-                    return openssl_decrypt($encrypted, $chiper, $key, 0, $iv);
-                  }
-                function encryptNumber($number, $key){
-                    $chiper = 'aes-256-cbc';
-                    $iv_length = openssl_cipher_iv_length($chiper);
-                    $iv = openssl_random_pseudo_bytes($iv_length);
-                    $encrypted = openssl_encrypt($number, $chiper, $key, 0, $iv);
-                    $x = base64_encode($iv. $encrypted);
-                    if(decryptNumber($x, $key) == $number){
-                        return $x;
-                    }else{
-                        encryptNumber($number, $key);
-                    }
-                }
                 require '../../../includes/dbconnect.php';
 
                 if(isset($_REQUEST['approved'])){
@@ -85,8 +65,7 @@
                         $id = $row['id'];
                         $taka = $row['taka'];
                         $user_id = $row['user_id'];
-                        $key = 'abdur';
-                        $task_id = encryptNumber($row['task_id'],$key);
+                        $task_id = $row['task_id'];
                         ?>
                         <div class='col-md-4 col-xl-3 px-sm-3 mt-3'>
                             <div class='card'>
@@ -106,7 +85,7 @@
                                         </div>
                                         <?php } ?>
                                         <div class='col-4'>
-                                            <a class='btn btn-secondary' href='../../../task/details.php?name=<?= $task_id ?>'>View</a>
+                                            <a class='btn btn-secondary' href='../../../task/details.php?name=e89rgft7897g9e7&digbvuidfgvgdb=<?= $task_id ?>&gdgvdbiubeifrbeivbf8dygc=dhfgvbhrbu'>View</a>
                                         </div>
                                     </div>
                                 </div>
