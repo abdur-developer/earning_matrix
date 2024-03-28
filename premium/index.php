@@ -3,39 +3,9 @@ require '../includes/dbconnect.php';
 $sessionId = $_SESSION["id"];
 $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT balance, daily_task FROM users WHERE id = $sessionId"));
 $balance = $user['balance'];
-$daily_task = $user['daily_task'];
+$user_daily_task = $user['daily_task'];
 
-if(isset($_REQUEST['buying'])){
-    $tk = $_REQUEST['buying'];
-    $plan_id = $_REQUEST['id'];
-    $task = $_REQUEST['task'];
-    $validity = $_REQUEST['validity'];
 
-    if($balance >= $tk){
-      $balance -= $tk;
-      $daily_task += $task;
-      $sql = "UPDATE users SET balance = '$balance', daily_task = '$daily_task' WHERE id = $sessionId";
-      mysqli_query($conn, $sql);//update balance
-
-      $sql = "INSERT INTO trx_history (user_id, note, amount, is_add) VALUES ('$sessionId', 'buy a plan', '$tk', '0')";
-      mysqli_query($conn, $sql);//add trx history
-
-      $sql = "INSERT INTO buy_plan (user_id, amount, validity) VALUES ('$sessionId', '$tk', '$validity')";
-
-      if(mysqli_query($conn,$sql)){
-        echo "<script> window.location.href='?q=premium&success' ;</script>";
-      }else{
-        echo "<script> window.location.href='?q=premium&failed' ;</script>";
-      }
-    }else{
-      echo "<script> window.location.href='?q=premium&failed' ;</script>";
-    }
-  }elseif (isset($_REQUEST['success'])) { 
-    echo "<script> Swal.fire({ title: 'Success...!', text: 'Successfully buying this plan.... you can buy many plan ...!', icon: 'success' }); </script>";
-
-  }elseif (isset($_REQUEST['failed'])) { 
-    echo "<script> Swal.fire({ title: 'Failed...!', text: 'Failed to buying this plan.... You don\'t have enough money ...!', icon: 'error' }); </script>";
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +13,7 @@ if(isset($_REQUEST['buying'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .vip-img {
             height: 100px;
@@ -57,9 +28,50 @@ if(isset($_REQUEST['buying'])){
         .card:hover {
             box-shadow: 3px 3px 8px green;
         }
+        .confirmation-dialog {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .dialog-content {
+            background-color: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .buttons {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 8px 16px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
+    <?php
+        if (isset($_REQUEST['success'])) { 
+            echo "<script> Swal.fire({ title: 'Success...!', text: 'Successfully buying this plan....!', icon: 'success' }); </script>";
+        
+        }elseif (isset($_REQUEST['failed'])) { 
+            echo "<script> Swal.fire({ title: 'Failed...!', text: 'Failed to buying this plan.... You dont have enough money ...!', icon: 'error' }); </script>";
+        }
+
+    ?>
     <div class="container">
         <div class="header d-flex justify-content-center mt-3">
             <img src="../assets/images/task.jpg" class="img-fluid m-2" height="30px" width="30px">
@@ -83,37 +95,63 @@ if(isset($_REQUEST['buying'])){
                             $three = $row['3rd'];
                             $four = $row['4th'];
                             $five = $row['5th'];
-                            echo "<div class='col-md-6 col-lg-4 px-sm-3 mt-3'>
-                            <div class='card'>
-                                <div class='card-header'>
-                                    <img src='../assets/images/lottary.jpg' class='vip-img img-fluid'>
+                            $cdPlanId = $plan_id;
+
+                            $sql = "SELECT COUNT(*) AS num_rows FROM buy_plan WHERE user_id = $sessionId AND plan_id = $plan_id";
+                            $nnn = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+                            $num_of_rows = $nnn['num_rows'];
+                            // echo $num_of_rows;
+                            ?>
+                            <div class="col-md-6 col-lg-4 px-sm-3 mt-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../assets/images/lottary.jpg" class="vip-img img-fluid">
                                 </div>
-                                <div class='card-footer'>
-                                    <h4 class='text-center'>Price: ৳$price</h4>
-                                    <p class='text-center text-white bg-danger rounded mx-3'>Extra Benefits</p>
+                                <div class="card-footer">
+                                    <h4 class="text-center">Price: ৳<?= $price ?></h4>
+                                    <p class="text-center text-white bg-danger rounded mx-3">Extra Benefits</p>
                                     <ul>
-                                        <li>Dayli: $num_of_task Guaranteed task</li>
-                                        <li>Dayli Task Earning: ৳ $task_in</li>
-                                        <li>Sponsor Income: ৳10</li>
-                                        <li>1st Gen income: ৳$one</li>
-                                        <li>2nd Gen income: ৳$two</li>
-                                        <li>3rd Gen income: ৳$three</li>
-                                        <li>4th Gen income: ৳$four</li>
-                                        <li>5th Gen income: ৳$five</li>
-                                        <li>Validity: <span class='text-center text-black bg-warning rounded px-3'>$validity days</span></li>
+                                        <li>Daily: <?= $num_of_task ?> Guaranteed task</li>
+                                        <li>Daily Task Earning: ৳ <?= $task_in ?></li>
+                                        <li>1st Gen income: ৳<?= $one ?></li>
+                                        <li>2nd Gen income: ৳<?= $two ?></li>
+                                        <li>3rd Gen income: ৳<?= $three ?></li>
+                                        <li>4th Gen income: ৳<?= $four ?></li>
+                                        <li>5th Gen income: ৳<?= $five ?></li>
+                                        <li>Validity: <span class="text-center text-black bg-warning rounded px-3"><?= $validity ?> days</span></li>
                                     </ul>
-                                    <form action='' method='post'>
-                                        <input type='hidden' name='q' value='premium'/>
-                                        <input type='hidden' name='buying' value='$price'/>
-                                        <input type='hidden' name='id' value='$plan_id'/>
-                                        <input type='hidden' name='task' value='$num_of_task'/>
-                                        <input type='hidden' name='validity' value='$validity'/>
-                                        <button type='submit' class='btn btn-success text-white mt-3 w-100'>Buy Plan</button>
-                                    </form>
+                                    <?php
+                                        if($num_of_rows < 1){
+                                    ?>
+                                        <button onclick="openConfirmation(<?= $cdPlanId ?>)" class="btn btn-success text-white mt-3 w-100">Buy Plan</button>
+                                        <?php } else { ?>
+                                            <button class="btn btn-warning mt-3 w-100">Already Buy</button>
+                                        <?php } ?>
                                 </div>
                             </div>
-                        </div>";
+                        </div>
+                        <div id="<?= $cdPlanId ?>" class="confirmation-dialog">
+                            <div class="dialog-content">
+                                <p>আপনি কি Plan টি কিনতে চাচ্ছেন...?</p>
+                                <div class="buttons">
+                                    <div class="row">
+                                        <form action="../premium/buy.php" method="post" class="col-8">
+                                            <input type="hidden" name="q" value="premium"/>
+                                            <input type="hidden" name="buying" value="<?= $plan_id ?>"/>
+                                            <input type="hidden" name="user_daily_task" value="<?= $user_daily_task ?>"/>
+                                            <input type="hidden" name="sessionId" value="<?= $sessionId ?>"/>
+                                            <input type="hidden" name="balance" value="<?= $balance ?>"/>
+                                            <button type="submit" onclick="confirmAction()" class="btn btn-success">Yes</button>
+                                        </form>
+                                        <a href="../home/?q=premium" class="btn btn-danger col-3">No</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            
                         }
+                        
                     }else{
                         echo "
                     <div class='container-fluid'>
@@ -130,5 +168,19 @@ if(isset($_REQUEST['buying'])){
             </div>
         </div>
     </div>
+    <script>
+        function openConfirmation(x) {
+            document.getElementById(x).style.display = 'block';
+        }
+
+        function closeConfirmation() {
+            document.getElementById(x).style.display = 'none';
+        }
+
+        function confirmAction() {
+            closeConfirmation();
+            //window.location.href = "..home/";
+        }
+    </script>
 </body>
 </html>

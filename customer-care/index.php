@@ -33,6 +33,9 @@ $wa_pay = "+88".$row['payment_wa_num'];
             <img src="../assets/images/task.jpg" class="img-fluid m-2" height="40px" width="40px">
             <h3 class="m-2 text-info">Customer care</h3>
         </div>
+        <div class="home">
+            <a href="../home/" class="btn btn-success px-3 py-1">Home</a>
+        </div>
         <div class="rounded notice m-2 p-4">
             <img src="../assets/images/in_notice.jpg" alt="" class="img-fluid d-block m-auto" height="40px" width="40px">
             <p class="small text-danger mt-2">

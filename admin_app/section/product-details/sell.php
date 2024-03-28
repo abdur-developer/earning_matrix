@@ -29,7 +29,11 @@
                     $product_id = $row['product_id'];
                     $amount = $row['amount'];
                     $status = $row['status'];
-
+                    $address = $row['address'];
+                    $pay_type = $row['pay_type'];
+                    $name = $row['name'];
+                    $number = $row['number'];
+                    
                     $sql = "SELECT name, img FROM product WHERE id ='$product_id'";
                     $query = mysqli_query($conn,$sql);
                     $x = mysqli_fetch_array($query);
@@ -41,13 +45,19 @@
                         <div class='row'>
                             <img src='../../../assets/product/$product_img'  class='col-3 img-fluid w-25 my-2' >
                             <div class='col-6'>
-                                <h6><a href='../../../shop/details.php?product=$product_id' class='stretched-link'>$product_name</a></h6>
+                                <h6><a href='../../../shop/details.php?product=$product_id'>$product_name</a></h6>
                                 <p><small>$amount taka</small></p>
                             </div>
                             <div class='col-3 pt-4'>
                                 <p style='font-size: 12px;'>$status</p>
                             </div>
                         </div>
+                    </div>
+                    <div>
+                        <h6>Name: $name</h6>
+                        <small>Number: $number</small>
+                        <address>$address</address>
+                        <strong>Payment Type: $pay_type</strong>
                     </div>
                     <div class='row py-2'>
                         <div class='col-4'> 
@@ -64,11 +74,11 @@
                 }
                 echo "</div>";
             }else{
-                echo "<img src='../assets/images/sorry.jpg' class='img-fluid d-block m-auto mt-4' width='80px' height='80px'>
+                echo "<img src='../../../assets/images/sorry.jpg' class='img-fluid d-block m-auto mt-4' width='80px' height='80px'>
                 <div class='text-danger mt-5'>
                     <p class='text-center small'><b>
-                        দুঃখিত আপনি কোনো অর্ডার করেননি । <br><br><br>
-                        <a class='btn btn-success'href='../home/?q=shop'>Order now</a>
+                        দুঃখিত user কোনো অর্ডার করে নি ।
+                        
                     </b></p>
                 </div>";
             }

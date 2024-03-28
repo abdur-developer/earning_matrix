@@ -267,7 +267,6 @@ $targetDate = $row["last_spin"];
 
     <script>
         const balance = <?= $user['balance'] ?>;
-        console.log(balance);
         function openConfirmation() {
             document.getElementById('confirmationDialog').style.display = 'block';
         }
