@@ -12,6 +12,12 @@
     </style>
 </head>
 <body>
+    <div class="header bg-primary text-white row">
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../home.php">Home</a>
+        </h1>
+        <h1 class="py-2 text-center col-11">Lottery Section</h1>
+    </div>
 <div class="container-fluid">
     <p class="text-center px-2 bg-warning">
         <?php if(isset($_REQUEST['success'])){

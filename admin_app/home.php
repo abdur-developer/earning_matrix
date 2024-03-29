@@ -15,8 +15,30 @@ if(isset($_COOKIE['login'])){
     </head>
 
     <body>
+        
         <div class="header bg-primary text-white">
             <h1 class="py-2 text-center">Earning Matrix</h1>
+        </div>
+        <div class="mb-1">
+            <?php
+                require '../includes/dbconnect.php';
+                if(isset($_GET['active'])){
+                    $sql = "UPDATE system SET site_on_off = '1' WHERE id = 1";
+                    mysqli_query($conn, $sql);
+                }elseif(isset($_GET['inactive'])){
+                    $sql = "UPDATE system SET site_on_off = '0' WHERE id = 1";
+                    mysqli_query($conn, $sql);
+                }
+                $sql = "SELECT site_on_off FROM system WHERE id = '1'";
+                $r = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+                $site_on_off = $r['site_on_off'];
+
+                if($site_on_off == 0){
+                    echo "<a href='home.php?active' class='btn btn-danger'>Site Off</a>";
+                }else{
+                    echo "<a href='home.php?inactive' class='btn btn-success'>Site On</a>";
+                }
+            ?>
         </div>
         <div class="container p-3">
 
@@ -153,6 +175,19 @@ if(isset($_COOKIE['login'])){
                         </div>
                         <div class="col-3"  style='color:#ffffff font-size: 70px;' >
                             <img src="arrow.png" alt="" class="color-img" >
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card col-lg-5 mx-3 p-2 mb-3" style="background-color: darkmagenta;">
+                    <div class="row card-body">
+                        <div class="user-sec text-white col-9">
+                            <h2 class="card-title text-left">Notice Section</h2>
+                            <p class="card-text text-left">earning matrix</p>
+                            <a href="section/noti-sec.php" class="stretched-link"></a>
+                        </div>
+                        <div class="col-3"  style='color:#ffffff font-size: 70px;' >
+                            <img src="arrow.png" alt="" class="color-change-img" >
                         </div>
                     </div>
                     

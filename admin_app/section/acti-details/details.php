@@ -6,8 +6,11 @@
     <link href='../../../bootstrap/css/bootstrap.min.css' rel='stylesheet'>
 </head>
 <body class="" style="background-color: #E0F7FA;">
-    <div class="header bg-primary text-white">
-        <h1 class="py-2 text-center">Activation Details</h1>
+    <div class="header bg-primary text-white row">
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../../home.php">Home</a>
+        </h1>
+        <h1 class="py-2 text-center col-11">Activation Details</h1>
     </div>
     <div class="container">
         

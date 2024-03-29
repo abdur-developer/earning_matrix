@@ -185,7 +185,10 @@ img {
 
     </style>
 </head>
-<body>
+<body> 
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../home.php">Home</a>
+        </h1>
     <!-- Counter Section Begin -->
     <section class="counter">
         <div class="container">

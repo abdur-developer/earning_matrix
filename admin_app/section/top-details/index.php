@@ -44,9 +44,10 @@
 	<script type="text/javascript" src="../../../bootstrap/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<div class="bg-secondary py-2">
-		<h3 class="text-white text-center">Withdraw Details</h3>
-		<h3 class="text-white text-center">Total : <?= $total ?></h3>
+	<div class="bg-secondary py-2 row">
+		<h1 class="text-center col-1"><a class="btn btn-light" href="../../home.php">Home</a></h1>
+		<h3 class="text-white text-center col-11">Top up Details</h3>
+		<h3 class="text-white text-center col-12">Total : <?= $total ?></h3>
 	</div>
 	<div class="container well">
 		<div class="row">

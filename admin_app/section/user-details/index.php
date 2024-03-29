@@ -19,6 +19,10 @@
 	}elseif($type == 'ban'){
 		$sql = "SELECT * FROM $table_name WHERE status = 'Ban' ORDER BY id DESC LIMIT $start, $limit";
 	}
+	if(isset($_REQUEST['email'])){
+		$email = $_REQUEST['email'];
+		$sql = "SELECT * FROM $table_name WHERE email = '$email'";
+	}
 
 	$result = $conn->query($sql);
 	$customers = $result->fetch_all(MYSQLI_ASSOC);
@@ -44,9 +48,10 @@
 	<script type="text/javascript" src="../../../bootstrap/js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<div class="bg-secondary py-2">
-		<h3 class="text-white text-center">User Details</h3>
-		<h3 class="text-white text-center">Total : <?= $total ?></h3>
+<div class="bg-secondary py-2 row">
+		<h1 class="text-center col-1"><a class="btn btn-light" href="../../home.php">Home</a></h1>
+		<h3 class="text-white text-center col-11">User Details</h3>
+		<h3 class="text-white text-center col-12">Total : <?= $total ?></h3>
 	</div>
 	<div class="container well">
 		<div class="row">
@@ -59,7 +64,10 @@
 								<option <?php if( isset($_POST["limit-records"]) && $_POST["limit-records"] == $limit) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
 							<?php endforeach; ?>
 						</select>
-					</form>
+				</form>
+				<form action="" method="post">
+					<input type="email" name="email" placeholder="enter a mail" class="m-2 form-control">
+				</form>
 				</div>
 		</div>
 		<div style="height: 600px; overflow-y: auto;" class="mt-3 px-1 mx-1">

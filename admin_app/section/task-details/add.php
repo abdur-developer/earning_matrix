@@ -154,6 +154,12 @@
     </style>
 </head>
 <body>
+    <div class="header bg-primary text-white row">
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../../home.php">Home</a>
+        </h1>
+        <h1 class="py-2 text-center col-11">Adding Task</h1>
+    </div>
     <div class="container">
         <p class="text-center px-2 bg-warning">
             <?php
@@ -174,7 +180,6 @@
             } ?>
         </p>
         <header class="header">
-            <h1 id="title" class="text-center">Adding Premium Plan</h1>
             <!-- <p id="description" class="text-center">
                 Thank you for taking the time to help us improve the platform
             </p> -->

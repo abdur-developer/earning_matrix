@@ -15,8 +15,11 @@ if(isset($_COOKIE['login'])){
     </head>
 
     <body>
-        <div class="header bg-primary text-white">
-            <h1 class="py-2 text-center">User Section</h1>
+        <div class="header bg-primary text-white row">
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../home.php">Home</a>
+        </h1>
+        <h1 class="py-2 text-center col-11">User Section</h1>
         </div>
         <div class="container p-3">
 

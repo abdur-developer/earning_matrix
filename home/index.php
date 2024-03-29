@@ -1,10 +1,19 @@
 <?php
+require "../includes/dbconnect.php";
+
+$sql = "SELECT site_on_off FROM system WHERE id = '1'";
+$r = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+$site_on_off = $r['site_on_off'];
+
+if($site_on_off == 0){
+    header("location: ../maintenance.php");
+}
+
 session_start();
 if(!isset($_SESSION["id"])){
   header("location: ../auth");
   die("login failed");
 }
-require "../includes/dbconnect.php";
 $sessionId = $_SESSION["id"];
 $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $sessionId"));
 
@@ -60,7 +69,7 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
       <div class="navbar_content">
         <i class="bi bi-grid"></i>
         <!-- <i class="bx bx-sun" id="darkLight"></i> -->
-        <!-- <i class='bx bx-bell' ></i> -->
+        <a href="?q=notice" class="nav_link"><i class='bx bx-bell' ></i></a>
         <a href="../profile/"><img src=" <?php echo '../assets/profile_img/'.$user['image']; ?> " alt="profile" class="profile mr-5 pr-2" /></a>
       </div>
     </nav>
@@ -121,7 +130,7 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
               <li class="item">
                 <a href="?q=task" class="nav_link" style="position: relative;">
                   <span class="navlink_icon">
-                  <i class='bx bx-cloud-snow'></i>
+                  <i class="bx bx-calendar"></i>
                   </span>
                   <span class="navlink">Daily Task</span>
                   <span class="red-bej"></span>
@@ -152,14 +161,6 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
                   <span class="red-bej"></span>
                 </a>
               </li>
-              <!--<li class="item">
-                <a href="?q=task" class="nav_link">
-                  <span class="navlink_icon">
-                    <i class="bx bx-calendar"></i>
-                  </span>
-                  <span class="navlink">Daily Task</span>
-                </a>
-              </li>-->
               <li class="item">
                 <a href="?q=refer" class="nav_link">
                   <span class="navlink_icon">
@@ -171,6 +172,14 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
             </ul>
             <ul class="menu_items">
               <div class="menu_title menu_setting"></div>
+              <li class="item">
+                <a href="?q=notice" class="nav_link">
+                  <span class="navlink_icon">
+                  <i class='bx bx-bell' ></i>
+                  </span>
+                  <span class="navlink">Notice</span>
+                </a>
+              </li>
               <li class="item">
                 <a href="?q=order" class="nav_link">
                   <span class="navlink_icon">
@@ -265,6 +274,8 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
               include "../lottary/index.php";
             }else if($q == 'deposite'){
               include "../deposite/index.php";
+            }else if($q == 'notice'){
+              include "../notice/index.php";
             }
           }//====active user access end
         }else{ //=====for default screent start
