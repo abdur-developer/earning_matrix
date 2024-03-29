@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2024 at 10:11 AM
+-- Generation Time: Mar 29, 2024 at 07:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -132,6 +132,18 @@ CREATE TABLE `lot_ticket` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notice`
+--
+
+CREATE TABLE `notice` (
+  `id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `order_product`
 --
 
@@ -213,6 +225,25 @@ CREATE TABLE `subscriber` (
   `id` int(11) NOT NULL,
   `email` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `system`
+--
+
+CREATE TABLE `system` (
+  `id` int(11) NOT NULL,
+  `auto_approved_task` int(1) NOT NULL DEFAULT 0,
+  `site_on_off` int(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `system`
+--
+
+INSERT INTO `system` (`id`, `auto_approved_task`, `site_on_off`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -372,6 +403,12 @@ ALTER TABLE `lot_ticket`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `notice`
+--
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `order_product`
 --
 ALTER TABLE `order_product`
@@ -399,6 +436,12 @@ ALTER TABLE `submit_task`
 -- Indexes for table `subscriber`
 --
 ALTER TABLE `subscriber`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `system`
+--
+ALTER TABLE `system`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -479,6 +522,12 @@ ALTER TABLE `lot_ticket`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `notice`
+--
+ALTER TABLE `notice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `order_product`
 --
 ALTER TABLE `order_product`
@@ -507,6 +556,12 @@ ALTER TABLE `submit_task`
 --
 ALTER TABLE `subscriber`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `system`
+--
+ALTER TABLE `system`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `task`
