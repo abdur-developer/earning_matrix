@@ -66,6 +66,8 @@
                         $taka = $row['taka'];
                         $user_id = $row['user_id'];
                         $task_id = $row['task_id'];
+                        $status = $row['status'];
+                        $screenshot = $row['screenshot'];
                         ?>
                         <div class='col-md-4 col-xl-3 px-sm-3 mt-3'>
                             <div class='card'>
@@ -85,7 +87,7 @@
                                         </div>
                                         <?php } ?>
                                         <div class='col-4'>
-                                            <a class='btn btn-secondary' href='../../../task/details.php?name=e89rgft7897g9e7&digbvuidfgvgdb=<?= $task_id ?>&gdgvdbiubeifrbeivbf8dygc=dhfgvbhrbu'>View</a>
+                                            <a class='btn btn-secondary' href='view.php?task_id=<?= $task_id ?>&user_id=<?= $user_id ?>&ss=<?= $screenshot ?>&status=<?= $status ?>&id=<?= $id ?>&taka=<?= $taka ?>'>View</a>
                                         </div>
                                     </div>
                                 </div>
