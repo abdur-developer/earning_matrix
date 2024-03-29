@@ -199,9 +199,9 @@ $targetDate = $row["last_spin"];
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
-            }
+        }
 
-            .dialog-content {
+        .dialog-content {
             background-color: white;
             width: 300px;
             padding: 20px;
@@ -211,17 +211,17 @@ $targetDate = $row["last_spin"];
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            }
+        }
 
-            .buttons {
+        .buttons {
             text-align: right;
             margin-top: 20px;
-            }
+        }
 
-            .buttons button {
+        .buttons button {
             padding: 8px 16px;
             margin-left: 10px;
-            }
+        }
     </style>
 </head>
 <section style="justify-content: center; display: flex;">

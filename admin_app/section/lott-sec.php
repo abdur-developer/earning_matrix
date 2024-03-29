@@ -42,6 +42,9 @@
                                     
                                 </div>
                                 <div class='card-footer'>
+                                    <?php if($row['status'] == 'Complete'){
+                                        echo "<div class='col-12'><button class='btn btn-success w-100'>Complete</button></div>";
+                                    }else{ ?>
                                     <div class='row text-center'>
                                         <div class='col-4'> 
                                             
@@ -53,14 +56,14 @@
                                             }
                                             ?>
                                         </div>
-                                        <!-- <div class='col-4'>
-                                            <a class='btn btn-secondary' href='lottary-details/update.php?id=<?= $id ?>'>Update</a>
-                                        </div> -->
                                         <div class='col-4'>
                                             <a class='btn btn-danger' href='lottary-details/delete.php?id=<?= $id ?>'>Delete</a>
                                         </div>
+                                        <div class='col-4'>
+                                            <a class='btn btn-secondary' href='lottary-details/draw.php?degu9rth9ghr9g9rgh=dbfbhdgfi1guyg&dfbdfuh=<?= $id ?>&dhfivbd5hfvbidf=4dhbfvdbv3sdfgvyd'>Draw</a>
+                                        </div>
                                     </div>
-                                    
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
