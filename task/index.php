@@ -105,7 +105,7 @@
                                 <h5 class="text-success px-3"><b>$ <?= $taka ?></b></h5>
                                 <div class="d-flex justify-content-end">
                                     <?php
-                                    if(mysqli_num_rows($query) == 0){
+                                    if(mysqli_num_rows($query_x) == 0){
                                         echo "<a href='../task/details.php?name=<?= $title ?>&digbvuidfgvgdb=$task_id&gdgvdbiubeifrbeivbf8dygc=dhfgvbhrbu'
                                          class='btn btn-outline-secondary m-1'>see more</a>";
                                     }
