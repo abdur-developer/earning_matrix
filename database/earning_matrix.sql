@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2024 at 06:13 PM
+-- Generation Time: Mar 29, 2024 at 10:11 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,6 +47,7 @@ CREATE TABLE `active` (
 CREATE TABLE `buy_plan` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `plan_id` int(11) NOT NULL,
   `amount` int(5) NOT NULL,
   `validity` int(3) NOT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp()
@@ -70,6 +71,13 @@ CREATE TABLE `contact` (
   `address` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `b_number`, `n_number`, `contact_number`, `password_wa_num`, `payment_wa_num`, `telegram_link`, `contact_email`, `address`) VALUES
+(1, '01602624851', '01602624851', '01600284041', '01600284041', '01602624851', 'https://t.me/earningmatrix_channel', 'earningmatrixhelp@gmail.com', 'Ashulia, Savar, Dhaka');
+
 -- --------------------------------------------------------
 
 --
@@ -85,6 +93,22 @@ CREATE TABLE `deposit` (
   `status` varchar(100) NOT NULL DEFAULT 'Pending',
   `img` varchar(225) NOT NULL,
   `time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lottary`
+--
+
+CREATE TABLE `lottary` (
+  `id` int(11) NOT NULL,
+  `price` int(5) NOT NULL,
+  `title` varchar(20) NOT NULL,
+  `sort_des` varchar(25) NOT NULL,
+  `target` int(5) NOT NULL,
+  `win_bonus` int(5) NOT NULL DEFAULT 0,
+  `status` varchar(20) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -114,6 +138,10 @@ CREATE TABLE `lot_ticket` (
 CREATE TABLE `order_product` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `number` int(15) NOT NULL,
+  `pay_type` varchar(10) NOT NULL,
+  `address` text NOT NULL,
   `product_id` int(11) NOT NULL,
   `amount` int(5) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT 'Pending'
@@ -231,6 +259,13 @@ CREATE TABLE `total` (
   `t_active` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `total`
+--
+
+INSERT INTO `total` (`id`, `t_user`, `t_new_user`, `t_active`) VALUES
+(1, '10k', '300', '3k');
+
 -- --------------------------------------------------------
 
 --
@@ -322,6 +357,12 @@ ALTER TABLE `contact`
 -- Indexes for table `deposit`
 --
 ALTER TABLE `deposit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lottary`
+--
+ALTER TABLE `lottary`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -417,12 +458,18 @@ ALTER TABLE `buy_plan`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `deposit`
 --
 ALTER TABLE `deposit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `lottary`
+--
+ALTER TABLE `lottary`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

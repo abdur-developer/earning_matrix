@@ -180,6 +180,10 @@
                     <label id="title-label" for="title">lottary sort title</label>
                     <input type="text" name="title" id="title" placeholder="Enter lottery title" class="form-control" maxlength="25" required>
                 </div>
+                <div class="form-group">
+                    <label id="title-label" for="win">Wining bonus</label>
+                    <input type="number" name="win" id="win" placeholder="Enter wining bonus" class="form-control" maxlength="25" required>
+                </div>
                 
                 <div class="row">
                     <div class="col-md-6">
