@@ -14,7 +14,27 @@
         <h1 class="py-2 text-center">Task Section</h1>
     </div>
     <div class="container p-3">
+        <div class="mb-1">
+            <?php
+                require '../../includes/dbconnect.php';
+                if(isset($_GET['active'])){
+                    $sql = "UPDATE system SET auto_approved_task = '1' WHERE id = 1";
+                    mysqli_query($conn, $sql);
+                }elseif(isset($_GET['inactive'])){
+                    $sql = "UPDATE system SET auto_approved_task = '0' WHERE id = 1";
+                    mysqli_query($conn, $sql);
+                }
+                $sql = "SELECT auto_approved_task FROM system WHERE id = '1'";
+                $r = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+                $auto_approved_task = $r['auto_approved_task'];
 
+                if($auto_approved_task == 0){
+                    echo "<a href='task-sec.php?active' class='btn btn-danger'>Auto Approved Off</a>";
+                }else{
+                    echo "<a href='task-sec.php?inactive' class='btn btn-success'>Auto Approved On</a>";
+                }
+            ?>
+        </div>
 
         <div class="card p-2 mb-3" style="background-color: deeppink;">
             <div class="row card-body">
