@@ -49,6 +49,7 @@
                     $sql = "SELECT * FROM task";
                     $query = mysqli_query($conn,$sql);
                     $num_of_rows = mysqli_num_rows($query);
+                    //echo $num_of_rows;
 
                     
 
@@ -68,9 +69,20 @@
                             </div>
                             <?php 
                     }else{
-                        for($x=0 ; $x < $total_task; $x++){
-                            $row = mysqli_fetch_array($query);
-                            $task_id = $row['id'];
+                        $x=0 ;
+                        while($row = mysqli_fetch_array($query)){
+                            //var_dump($row);
+                            //echo "<br><br><br>";
+                            if($x == $total_task){
+                                //echo "total task : $total_task <br> X = $x";
+                                break;
+
+////////////////////////////////////////////////////////////////
+                            
+////////////////////////////////////////////////////////////////
+
+                            }else{
+                                $task_id = $row['id'];
                             // echo $task_id;
                             $title = $row['title'];
                             $description = $row['description'];
@@ -78,11 +90,11 @@
                 ?>
                             <div class="col-md-5 col-lg-3 task-item mx-1 mt-3"> <?php 
                                 $sql = "SELECT status FROM submit_task WHERE user_id = '".$user['id']."' AND task_id = '".$row['id']."'";
-                                $query = mysqli_query($conn,$sql);
-                                if(mysqli_num_rows($query) == 0){
+                                $query_x = mysqli_query($conn,$sql);
+                                if(mysqli_num_rows($query_x) == 0){
                                     echo "<button class='btn btn-success mt-3 mx-4'>Available</button>";
                                 }else{
-                                    $status = mysqli_fetch_array($query);
+                                    $status = mysqli_fetch_array($query_x);
                                     $status = $status['status'];
                                     echo "<button class='btn btn-warning mt-3 mx-4'>$status</button>";
                                 }
@@ -101,7 +113,10 @@
                                     
                                 </div>
                             </div>
-                    <?php }} ?>
+                    <?php $x++;
+                            }
+                            
+                             }} ?>
                 </div>
             </div>
 

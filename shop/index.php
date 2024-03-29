@@ -150,7 +150,7 @@ if(!isset($_SESSION["id"])){
         $link = "../shop/details.php?product=" . $product['id'];
         ?>
 
-        <div class="card col-5 m-2">
+        <div class="card col-md-5 col-lg-3git m-2">
           <div class="card-body">
 
               <img src="../assets/product/<?= $product['img'] ?>" class="product-img img-thumbnail d-block m-auto rounded"/>
