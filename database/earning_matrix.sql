@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2024 at 07:38 PM
+-- Generation Time: Mar 30, 2024 at 02:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -126,7 +126,7 @@ CREATE TABLE `lot_ticket` (
   `t_token` varchar(5) NOT NULL,
   `result` varchar(10) NOT NULL DEFAULT 'Pending',
   `amount` int(11) NOT NULL DEFAULT 10,
-  `time` date NOT NULL DEFAULT current_timestamp()
+  `time` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
