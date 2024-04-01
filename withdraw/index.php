@@ -1,14 +1,3 @@
-<?php 
-require '../includes/dbconnect.php';
-
-$id = $_SESSION['id'];
-$sql = "SELECT * FROM users WHERE id = $id";
-$fatch = mysqli_query($conn, $sql);
-$user_data = mysqli_fetch_assoc($fatch);
-$t_ref_for_with = $user_data['t_ref_for_withdraw'];
-$balance = $user_data['balance'];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,44 +8,54 @@ $balance = $user_data['balance'];
     <title>Withdraw | My Earningbd</title>
 </head>
 <body>
-<?php
-    if(isset($_REQUEST['method'])){
-        $phone = $_REQUEST["number"];
-        $method = $_REQUEST["method"];
-        $amount = $_REQUEST["amount"];
-        $commission = ($amount * 5) / 100;
-        $total_coust = ($amount + $commission);
+<?php 
+require '../includes/dbconnect.php';
 
-        if($balance >= $total_coust){
-            $balance -= $total_coust;
+$id = $_SESSION['id'];
+$sql = "SELECT * FROM users WHERE id = $id";
+$fatch = mysqli_query($conn, $sql);
+$user_data = mysqli_fetch_assoc($fatch);
+$t_ref_for_with = $user_data['t_ref_for_withdraw'];
+$balance = $user_data['balance'];
 
-            $sql = "UPDATE users SET balance = '$balance' WHERE id = $id";
+if(isset($_REQUEST['method'])){
+    $phone = $_REQUEST["number"];
+    $method = $_REQUEST["method"];
+    $amount = $_REQUEST["amount"];
+    $commission = ($amount * 5) / 100;
+    $total_coust = ($amount + $commission);
 
-            if(strlen($phone) != 11){
-                echo "<script>Swal.fire({ position: 'top-end', icon: 'error', title: 'সঠিক ১১ সংখ্যার নাম্বার লিখুন...!', showConfirmButton: false, timer: 3000});</script>";
-            }else{
-                //query all data
-                mysqli_query($conn, $sql);//update balance
+    if($balance >= $total_coust){
+        $balance -= $total_coust;
 
-                
+        $sql = "UPDATE users SET balance = '$balance' WHERE id = $id";
 
-                $sql = "INSERT INTO trx_history (user_id, note, amount, is_add) VALUES ('$id', 'Request for Withdraw', '$amount', '0')";
-                mysqli_query($conn, $sql);//add trx history
-                
-                $sql = "UPDATE users SET t_ref_for_withdraw = '0' WHERE id = $id"; // refer for withdraw count set zero---------- 
-                mysqli_query($conn, $sql);//add update total refer for withdraw
+        if(strlen($phone) != 11){
+            echo "<script>Swal.fire({ position: 'top-end', icon: 'error', title: 'সঠিক ১১ সংখ্যার নাম্বার লিখুন...!', showConfirmButton: false, timer: 3000});</script>";
+        }else{
+            //query all data
+            mysqli_query($conn, $sql);//update balance
 
-                $sql = "INSERT INTO withdraw ( user_id, number, amount, method, commission) VALUES ( '$id', '$phone', '$amount', '$method', '$commission' )";
-                $query = mysqli_query($conn, $sql);
-                if ($query) { 
-                    echo "<script>Swal.fire({ position: 'top-end',icon: 'success', title: 'Successfully Data inserted..!', showConfirmButton: false, timer: 3000 }); </script>";
-                }
+            
+
+            $sql = "INSERT INTO trx_history (user_id, note, amount, is_add) VALUES ('$id', 'Request for Withdraw', '$amount', '0')";
+            mysqli_query($conn, $sql);//add trx history
+            
+            $sql = "UPDATE users SET t_ref_for_withdraw = '0' WHERE id = $id"; // refer for withdraw count set zero---------- 
+            mysqli_query($conn, $sql);//add update total refer for withdraw
+
+            $sql = "INSERT INTO withdraw ( user_id, number, amount, method, commission) VALUES ( '$id', '$phone', '$amount', '$method', '$commission' )";
+            $query = mysqli_query($conn, $sql);
+            if ($query) {
+                header("location: ../home/?q=with_his&error");
             }
-        }else {
-            echo "<script>Swal.fire({ position: 'top-end', icon: 'error', title: 'আপনার পর্যাপ্ত পরিমান balance নেই...!', showConfirmButton: false, timer: 3000});</script>";
         }
+    }else {
+        header("location: ../home/?q=with_his&success");
     }
-    ?>
+}
+?>
+
     <div class="container">
         <div class="header d-flex justify-content-center mt-3">
             <img src="../assets/images/withdraw_i.jpg" class="img-fluid m-2" height="30px" width="30px">
@@ -104,6 +103,7 @@ $balance = $user_data['balance'];
                     <div class="mt-5">
                         <label htmlFor="" class="ml-2 text-success er">
                             কত টাকা Withdraw করবেন <span class="text-danger">*</span>
+                            
                         </label>
                         <select name="amount" style="width: 100%" class="border p-2 small" required>
                             <option value="200">৳ 200</option>
@@ -111,6 +111,7 @@ $balance = $user_data['balance'];
                             <option value="500">৳ 500</option>
                             <option value="1000">৳ 1000</option>
                         </select>
+                        <!-- <p class="text-primary my-3 text-end"><a href="../link/withdraw_policy.html" style="text-decoration: none;">withdraw policy</a></p> -->
                     </div>
                     <!-- =================Submit starts here==================== -->
                     <?php

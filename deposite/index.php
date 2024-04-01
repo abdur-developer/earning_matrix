@@ -49,6 +49,7 @@ $nagad = $row['n_number'];
                         showConfirmButton: false,
                         timer: 1500
                         });
+                        window.location.href = "../home/?q=depo_his";
                     </script>
                 </div>
             <?php }

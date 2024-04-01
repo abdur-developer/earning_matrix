@@ -209,6 +209,22 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
                   <span class="navlink">Withdraw </span>
                 </a>
               </li>
+              <li class="item">
+                <a href="?q=depo_his" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="bx bx-history"></i>
+                  </span>
+                  <span class="navlink">Deposite History</span>
+                </a>
+              </li>
+              <li class="item">
+                <a href="?q=with_his" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="bx bx-history"></i>
+                  </span>
+                  <span class="navlink">Withdraw History</span>
+                </a>
+              </li>
             </ul>
 
             <!-- Sidebar Open / Close -->
@@ -265,6 +281,10 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
               include "../deposite/index.php";
             }else if($q == 'notice'){
               include "../notice/index.php";
+            }else if($q == 'depo_his'){
+              include "../depo-his/index.php";
+            }else if($q == 'with_his'){
+              include "../with-his/index.php";
             }
           }//====active user access end
         }else{ //=====for default screent start

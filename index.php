@@ -410,7 +410,7 @@ $new_user = $row['t_new_user'] . "+";
                         <div id="image10" class="image img_profile">
                           <span class="frame"><img src="assets/review_profile/img2.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
-                        <p id="text30">"Earning matrix এর সাপোর্ট সেকশন অনেক ফাস্ট। আমি পেমেন্ট নিয়ে একটা প্রব্লেম এ পরেছিলাম । পরে তাদের পেমেন্ট সাপোর্টে কল দেই। ৫ মিনিটের মধ্যে তারা সেই সমস্যা সমাধান করে দিয়েছিল।"</p>
+                        <p id="text30">"My Earningbd এর সাপোর্ট সেকশন অনেক ফাস্ট। আমি পেমেন্ট নিয়ে একটা প্রব্লেম এ পরেছিলাম । পরে তাদের পেমেন্ট সাপোর্টে কল দেই। ৫ মিনিটের মধ্যে তারা সেই সমস্যা সমাধান করে দিয়েছিল।"</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Ishita Jannat</p>
                           <p id="text17"><em>Member Of My Earningbd</em></p>

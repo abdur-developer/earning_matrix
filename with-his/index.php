@@ -29,13 +29,22 @@ require "../includes/dbconnect.php";
         border: 2px solid #F57C00;
       }
     </style>
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 </head>
 
 <body>
+    <?php
+        if(isset($_REQUEST['error'])){
+            echo "<script>Swal.fire({ position: 'top-end', icon: 'error', title: 'আপনার পর্যাপ্ত পরিমান balance নেই...!', showConfirmButton: false, timer: 3000});</script>";
+        }
+        if(isset($_REQUEST['success'])){
+            echo "<script>Swal.fire({ position: 'top-end',icon: 'success', title: 'Successfully Data inserted..!', showConfirmButton: false, timer: 3000 }); </script>";
+        }
+    ?>
     <div class="card p-2 m-2">
 
         <?php
-        $sql = "SELECT * FROM deposit WHERE user_id = $sessionId";
+        $sql = "SELECT * FROM withdraw WHERE user_id = $sessionId";
         $query = mysqli_query($conn, $sql);
         $total_row = mysqli_num_rows($query);
         if ($total_row == 0) {
