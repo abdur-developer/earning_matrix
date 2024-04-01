@@ -29,7 +29,7 @@ if(isset($_COOKIE['login'])){
                     <div class="user-sec text-black col-9">
                         <h2 class="card-title text-left">All Request</h2>
                         <p class="card-text text-left">
-                            earning matrix<a href="with-details/?type=all" class="stretched-link"></a>
+                            myearningbd<a href="with-details/?type=all" class="stretched-link"></a>
                         </p>
                         
                     </div>
@@ -45,7 +45,7 @@ if(isset($_COOKIE['login'])){
                 <div class="row card-body">
                     <div class="user-sec text-white col-9">
                         <h2 class="card-title text-left">Approved Request</h2>
-                        <p class="card-text text-left">earning matrix
+                        <p class="card-text text-left">myearningbd
                             <a href="with-details/?type=act" class="stretched-link"></a>
                         </p>
                     </div>
@@ -61,7 +61,7 @@ if(isset($_COOKIE['login'])){
                 <div class="row card-body">
                     <div class="user-sec text-black col-9">
                         <h2 class="card-title text-left">Pending Request</h2>
-                        <p class="card-text text-left">earning matrix
+                        <p class="card-text text-left">myearningbd
                             <a href="with-details/?type=pen" class="stretched-link"></a>
                         </p>
                     </div>
@@ -75,7 +75,7 @@ if(isset($_COOKIE['login'])){
                 <div class="row card-body">
                     <div class="user-sec text-white col-9">
                         <h2 class="card-title text-left">Ban Request</h2>
-                        <p class="card-text text-left">earning matrix
+                        <p class="card-text text-left">myearningbd
                             <a href="with-details/?type=ban" class="stretched-link"></a>
                         </p>
                     </div>

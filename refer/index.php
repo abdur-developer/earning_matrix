@@ -16,7 +16,7 @@ $ref_code = $row['my_ref_code'];
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>REFER | earning matrix</title>
+    <title>REFER | myearningbd</title>
     <link rel="shortcut icon" href="../assets/images/logo.png" type="image/png" />
     <link href="style.css" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" /> -->

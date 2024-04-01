@@ -29,7 +29,7 @@ if(isset($_COOKIE['login'])){
                     <div class="user-sec text-black col-9">
                         <h2 class="card-title text-left">All Product</h2>
                         <p class="card-text text-left">
-                            earning matrix<a href="product-details/" class="stretched-link"></a>
+                            myearningbd<a href="product-details/" class="stretched-link"></a>
                         </p>
                         
                     </div>
@@ -45,7 +45,7 @@ if(isset($_COOKIE['login'])){
                 <div class="row card-body">
                     <div class="user-sec text-white col-9">
                         <h2 class="card-title text-left">Add Product</h2>
-                        <p class="card-text text-left">earning matrix
+                        <p class="card-text text-left">myearningbd
                             <a href="product-details/add.php" class="stretched-link"></a>
                         </p>
                     </div>
@@ -60,7 +60,7 @@ if(isset($_COOKIE['login'])){
                 <div class="row card-body">
                     <div class="user-sec text-black col-9">
                         <h2 class="card-title text-left">Product Selling</h2>
-                        <p class="card-text text-left">earning matrix
+                        <p class="card-text text-left">myearningbd
                             <a href="product-details/sell.php" class="stretched-link"></a>
                         </p>
                     </div>

@@ -44,7 +44,7 @@
                 <div class="user-sec text-white col-9">
                     <h2 class="card-title text-left">All Task</h2>
                     <p class="card-text text-left">
-                        earning matrix<a href="task-details/" class="stretched-link"></a>
+                        myearningbd<a href="task-details/" class="stretched-link"></a>
                     </p>
 
                 </div>
@@ -59,7 +59,7 @@
             <div class="row card-body">
                 <div class="user-sec text-black col-9">
                     <h2 class="card-title text-left">Pending job</h2>
-                    <p class="card-text text-left">earning matrix
+                    <p class="card-text text-left">myearningbd
                         <a href="task-details/submit.php?type" class="stretched-link"></a>
                     </p>
                 </div>
@@ -74,7 +74,7 @@
             <div class="row card-body">
                 <div class="user-sec text-white col-9">
                     <h2 class="card-title text-left">All submited job</h2>
-                    <p class="card-text text-left">earning matrix
+                    <p class="card-text text-left">myearningbd
                         <a href="task-details/submit.php" class="stretched-link"></a>
                     </p>
                 </div>

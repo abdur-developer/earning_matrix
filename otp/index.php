@@ -53,7 +53,7 @@ style='
 			  height='30px'
 			/>
 		  </td>
-		  <td><h3 style='color:#fff;'>Earning Matrix</h3></td>
+		  <td><h3 style='color:#fff;'>My Earningbd</h3></td>
 		</tr>
 	  </tbody>
 	</table>
@@ -99,7 +99,7 @@ style='
 			letter-spacing: 0.46px;
 		  '
 		>
-		  Thank you for choosing Earning Matrix. Use the following OTP
+		  Thank you for choosing My Earningbd. Use the following OTP
 		  to complete the procedure to verify your email address. OTP is
 		  valid for
 		  <span style='font-weight: 600; color: #1f1f1f;'>5 minutes</span>.
@@ -158,7 +158,7 @@ style='
 		color: #434343;
 	  '
 	>
-	  Earning Matrix
+	  My Earningbd
 	</p>
 	<p style='margin: 0; margin-top: 8px; color: #434343;'>
 	  Address 540, Savar, Dhaka.
@@ -211,7 +211,7 @@ function smtp_mailer($to,$subject, $msg){
 	//$mail->SMTPDebug = 2; 
 	$mail->Username = "earningmatrix.shop@gmail.com"; // Sender's Email
 	$mail->Password = "gkyjbowxmpkikmro"; //Sender's Email App Password
-	$mail->SetFrom("earningmatrix.shop@gmail.com","Earning Matrix"); // Sender's Email
+	$mail->SetFrom("earningmatrix.shop@gmail.com","My Earningbd"); // Sender's Email
 	$mail->Subject = $subject;
 	$mail->Body =$msg;
 	$mail->AddAddress($to);

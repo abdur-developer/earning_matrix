@@ -29,7 +29,7 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <title>
-      Earning Matrix | make money online | earning website | refer and earn
+      My Earningbd | make money online | earning website | refer and earn
     </title>
     <!--- google font link-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,17 +38,6 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      .red-bej {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        width: 8px;
-        height: 8px;
-        background-color: red;
-        border-radius: 50%;
-      }
-    </style>
   </head>
   <body>
     <!-- navbar -->
@@ -56,8 +45,8 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $
       
         <div class="logo_item ml-5 pl-2">
           <i class="bx bx-menu" id="sidebarOpen"></i>
-          <a href="../home/" class="nav_link submenu_item" style="display: flex;">
-            <img src="../assets/images/logo.png" alt="logo" />Earning<span class="matrix">Matrix</span>
+          <a href="../home/" class="nav_link submenu_item a-logo">
+            <img src="../assets/images/logo.png" alt="logo" />My Earning<span class="matrix">BD</span>
           </a>
         </div>
       

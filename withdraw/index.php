@@ -16,7 +16,7 @@ $balance = $user_data['balance'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-    <title>Withdraw | Earning Matrix</title>
+    <title>Withdraw | My Earningbd</title>
 </head>
 <body>
 <?php

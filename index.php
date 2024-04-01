@@ -23,19 +23,19 @@ $new_user = $row['t_new_user'] . "+";
 <html lang="en">
 
 <head>
-  <title>Earning Matrix - make money online | online income | eraning money in bangladesh</title>
+  <title>My Earningbd - make money online | online income | eraning money in bangladesh</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light only" />
   <meta name="description"
     content="Introducing Crosstalk - a podcast show focused on work life balance and productivity." />
   <meta property="og:site_name"
-    content="Earning Matrix - make money online | online income | eraning money in bangladesh" />
+    content="My Earningbd - make money online | online income | eraning money in bangladesh" />
   <meta property="og:title"
-    content="Earning Matrix - make money online | online income | eraning money in bangladesh" />
+    content="My Earningbd - make money online | online income | eraning money in bangladesh" />
   <meta property="og:type" content="website" />
   <meta property="og:description"
-    content="Earning Matrix - make money online | online income | eraning money in bangladesh" />
+    content="My Earningbd - make money online | online income | eraning money in bangladesh" />
   <meta property="og:image" content="assets/images/earning_earning_main_page.jpg" />
   <meta name="twitter:image" content="assets/images/earning_earning_main_page.jpg">
   <link rel="icon" href="assets/images/logo.png" type="image/png">
@@ -75,13 +75,13 @@ $new_user = $row['t_new_user'] . "+";
             <div class="inner">
               <div>
                 <div id="image02" class="image">
-                  <span class="frame"><a href="#"><img src="assets/images/logo.png" alt="earning matrix" /></a>
+                  <span class="frame"><a href="#"><img src="assets/images/logo.png" alt="myearningbd" /></a>
                   </span>
                 </div>
               </div>
               <div>
                 <ul id="links03" class="links">
-                  <li class="n01"><a href="#">Earning Matrix</a></li>
+                  <li class="n01"><a href="#">My Earningbd</a></li>
                 </ul>
               </div>
             </div>
@@ -258,7 +258,7 @@ $new_user = $row['t_new_user'] . "+";
             <div class="inner">
               <div>
                 <div id="image06" class="image">
-                  <span class="frame"><img src="assets/images/bg.png" alt="earning matrix" /></span>
+                  <span class="frame"><img src="assets/images/bg.png" alt="myearningbd" /></span>
                 </div>
               </div>
               <div>
@@ -266,7 +266,7 @@ $new_user = $row['t_new_user'] . "+";
                 <hr id="divider06" />
                 <p id="text15">
                   <span class="p">
-                    At <strong>Earning Matrix,</strong> we are committed to revolutionizing the way individuals approach
+                    At <strong>My Earningbd,</strong> we are committed to revolutionizing the way individuals approach
                     online earning and financial empowerment.</span>
                   <span class="p"> Our platform provides a unique blend of cutting-edge technologies and innovative
                     strategies that allow users to seize opportunities in the dynamic world of online trading,
@@ -369,15 +369,15 @@ $new_user = $row['t_new_user'] . "+";
                     <div>
                       <div width="100%" height="100px">
                         <div id="image07" class="image" style="text-align: right; justify-content: right;">
-                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="earning matrix"></span>
+                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="myearningbd"></span>
                         </div>
                         <div id="image10" class="image img_profile">
-                          <span class="frame"><img src="assets/review_profile/img1.jpeg" alt="earning matrix" style="width: 50px; height: 50px;"></span>
+                          <span class="frame"><img src="assets/review_profile/img1.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
                         <p id="text30">"Alhamdulillah. I can earn much better from here. So far I have received 5000taka from here"</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Sham Rubaid</p>
-                          <p id="text17"><em>Member Of Earning Matrix</em></p>
+                          <p id="text17"><em>Member Of My Earningbd</em></p>
                         </div>
                     </div>
                     </div>
@@ -387,15 +387,15 @@ $new_user = $row['t_new_user'] . "+";
                     <div>
                       <div width="100%" height="100px">
                         <div id="image07" class="image" style="text-align: right; justify-content: right;">
-                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="earning matrix"></span>
+                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="myearningbd"></span>
                         </div>
                         <div id="image10" class="image img_profile">
-                          <span class="frame"><img src="assets/review_profile/img3.jpeg" alt="earning matrix" style="width: 50px; height: 50px;"></span>
+                          <span class="frame"><img src="assets/review_profile/img3.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
                         <p id="text30">"অনেক ভালো একটা ওয়েবসাইট। অনেক কম ডিপোজিট করে অনেক ভালো ফলাফল পাওয়া যায় এখান থেকে। আপনারা চাইলে এখান থেকে কাজ করতে পারেন। ইনশা আল্লাহ প্রতারিত হবেন না।"</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Mannan Vuiya</p>
-                          <p id="text17"><em>Member Of Earning Matrix</em></p>
+                          <p id="text17"><em>Member Of My Earningbd</em></p>
                         </div>
                     </div>
                     </div>
@@ -405,15 +405,15 @@ $new_user = $row['t_new_user'] . "+";
                     <div>
                       <div width="100%" height="100px">
                         <div id="image07" class="image" style="text-align: right; justify-content: right;">
-                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="earning matrix"></span>
+                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="myearningbd"></span>
                         </div>
                         <div id="image10" class="image img_profile">
-                          <span class="frame"><img src="assets/review_profile/img2.jpeg" alt="earning matrix" style="width: 50px; height: 50px;"></span>
+                          <span class="frame"><img src="assets/review_profile/img2.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
                         <p id="text30">"Earning matrix এর সাপোর্ট সেকশন অনেক ফাস্ট। আমি পেমেন্ট নিয়ে একটা প্রব্লেম এ পরেছিলাম । পরে তাদের পেমেন্ট সাপোর্টে কল দেই। ৫ মিনিটের মধ্যে তারা সেই সমস্যা সমাধান করে দিয়েছিল।"</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Ishita Jannat</p>
-                          <p id="text17"><em>Member Of Earning Matrix</em></p>
+                          <p id="text17"><em>Member Of My Earningbd</em></p>
                         </div>
                     </div>
                     </div>
@@ -423,15 +423,15 @@ $new_user = $row['t_new_user'] . "+";
                     <div>
                       <div width="100%" height="100px">
                         <div id="image07" class="image" style="text-align: right; justify-content: right;">
-                          <span class="frame"><img src="assets/images/4star.png" alt="earning matrix" height="30px"></span>
+                          <span class="frame"><img src="assets/images/4star.png" alt="myearningbd" height="30px"></span>
                         </div>
                         <div id="image10" class="image img_profile">
-                          <span class="frame"><img src="assets/review_profile/img4.jpeg" alt="earning matrix" style="width: 50px; height: 50px;"></span>
+                          <span class="frame"><img src="assets/review_profile/img4.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
                         <p id="text30">"not so good. পেমেন্ট সার্ভিস গুলো একটু ভালো করার চেস্টা করবেন। ২৪ ঘন্টা পর পেমেন্ট, অনেক টাইম হয়ে যায়। তাই সেদিকে নজর রাখতে বলব। "</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Nurul Islam</p>
-                          <p id="text17"><em>Member Of Earning Matrix</em></p>
+                          <p id="text17"><em>Member Of My Earningbd</em></p>
                         </div>
                     </div>
                     </div>
@@ -441,15 +441,15 @@ $new_user = $row['t_new_user'] . "+";
                     <div>
                       <div width="100%" height="100px">
                         <div id="image07" class="image" style="text-align: right; justify-content: right;">
-                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="earning matrix"></span>
+                          <span class="frame"><img src="https://9a15af69f10f805d.demo.carrd.co/assets/images/image07.png?v=bad71281" alt="myearningbd"></span>
                         </div>
                         <div id="image10" class="image img_profile">
-                          <span class="frame"><img src="assets/review_profile/img5.jpeg" alt="earning matrix" style="width: 50px; height: 50px;"></span>
+                          <span class="frame"><img src="assets/review_profile/img5.jpeg" alt="myearningbd" style="width: 50px; height: 50px;"></span>
                         </div>
                         <p id="text30">"ভালো বললেই চলে। "</p>
                         <div style="text-align: right; justify-content: right;">
                           <p id="text18">Shaikh Nasir</p>
-                          <p id="text17"><em>Member Of Earning Matrix</em></p>
+                          <p id="text17"><em>Member Of My Earningbd</em></p>
                         </div>
                     </div>
                     </div>
@@ -516,10 +516,10 @@ $new_user = $row['t_new_user'] . "+";
             <div class="inner">
               <div>
                 <div id="image18" class="image">
-                  <span class="frame"><img src="assets/images/logo.png" alt="earning matrix" /></span>
+                  <span class="frame"><img src="assets/images/logo.png" alt="myearningbd" /></span>
                 </div>
                 <p id="text20">
-                  " 'Earning Matrix' where you can earn by buy and sell products.You also can earn by refer people"
+                  " 'My Earningbd' where you can earn by buy and sell products.You also can earn by refer people"
                 </p>
               </div>
               <div>
@@ -582,7 +582,7 @@ $new_user = $row['t_new_user'] . "+";
           <div class="wrapper">
             <div class="inner">
               <p id="text01">
-                Copyright © 2024 | Earning Matrix
+                Copyright © 2024 | My Earningbd
               </p>
             </div>
           </div>
