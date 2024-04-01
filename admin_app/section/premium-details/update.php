@@ -56,7 +56,6 @@ if(isset($_REQUEST['name'])){
             @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
             
             body{
-                padding: 100px 0;
                 background: #ecf0f4;
                 width: 100%;
                 height: 100%;

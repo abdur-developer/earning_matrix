@@ -233,7 +233,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<label>Description : </label>
-						<textarea  id="comments" class="form-control" name="desc" placeholder="Enter product description here..."></textarea>
+						<textarea  id="comments" class="form-control" name="desc" placeholder="Enter product description here..." maxlength="1000"></textarea>
 					</div>
 				</div>
 			</div>

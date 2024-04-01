@@ -1,57 +1,10 @@
-<?php
-require "../../../includes/dbconnect.php";
-$id = '';
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-}else{
-    die('name not found');
-}
-$sql = "SELECT * FROM premium WHERE id='$id'";
-$query = mysqli_query($conn,$sql);
-$row = mysqli_fetch_array($query);
-
-$name = $row['vip_name'];
-$price = $row['price'];
-$num_task = $row['num_of_task'];
-
-$task_in = $row['task_earning'];
-$_1st = $row['1st'];
-$_2nd = $row['2nd'];
-$_3rd = $row['3rd'];
-$_4th = $row['4th'];
-$_5th = $row['5th'];
-$validity = $row['validity'];
-
-
-if(isset($_REQUEST['name'])){
-        
-    $name = $_REQUEST['name'];
-    $price = $_REQUEST['price'];
-    $num_task = $_REQUEST['num-task'];
-    $task_in = $_REQUEST['task-in'];
-    $_1st = $_REQUEST['1st'];
-    $_2nd = $_REQUEST['2nd'];
-    $_3rd = $_REQUEST['3rd'];
-    $_4th = $_REQUEST['4th'];
-    $_5th = $_REQUEST['5th'];
-    $validity = $_REQUEST['validity'];
-
-    $sql = "UPDATE premium SET vip_name = '$name', price = '$price', num_of_task = '$num_task', task_earning = '$task_in', 1st = '$_1st', 2nd = '$_2nd', 3rd = '$_3rd', 4th = '$_4th', 5th = '$_5th', validity = '$validity' WHERE id = $id;";
-   
-    if(mysqli_query($conn, $sql)){
-        header("location: ../premium-sec.php?success");
-    }else{
-        header("location: ../premium-sec.php?error");
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='../../../bootstrap/css/bootstrap.min.css' rel='stylesheet'>
-        <title>Add Premium Plan</title>
+        <link href='../../bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+        <title>contact Information</title>
         <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
             
@@ -200,78 +153,116 @@ if(isset($_REQUEST['name'])){
     </style>
 </head>
 <body>
+    <div class="header bg-primary text-white row">
+        <h1 class="text-center col-1">
+            <a class="btn btn-light" href="../home.php">Home</a>
+        </h1>
+        <h1 class="py-2 text-center col-11">Contact Information</h1>
+    </div>
     <div class="container">
+        <p class="text-center px-2 bg-warning">
+            <?php
+            require "../../includes/dbconnect.php";
+            if(isset($_REQUEST['address'])){
+                
+                $b_number = $_REQUEST['b_number'];
+                $n_number = $_REQUEST['n_number'];
+                $contact_number = $_REQUEST['contact_number'];
+                $password_wa_num = $_REQUEST['password_wa_num'];
+                $payment_wa_num = $_REQUEST['payment_wa_num'];
+                $telegram_link = $_REQUEST['telegram_link'];
+                $contact_email = $_REQUEST['contact_email'];
+                $address = $_REQUEST['address'];
+                
+                $sql = "UPDATE contact SET b_number = '$b_number', n_number = '$n_number', contact_number = '$contact_number', password_wa_num = '$password_wa_num', payment_wa_num = '$payment_wa_num', telegram_link = '$telegram_link', contact_email = '$contact_email', address = '$address' WHERE id = 1";
+            
+                if(mysqli_query($conn, $sql)){
+                    echo "successfully updated";
+                }else{
+                    echo "Worng , Contact Developer.....";
+                }
+            }
+            
+            $sql = "SELECT * FROM contact WHERE id = '1'";
+            $row = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+            $b_number = $row['b_number'];
+            $n_number = $row['n_number'];
+            $contact_number = $row['contact_number'];
+            $password_wa_num = $row['password_wa_num'];
+            $payment_wa_num = $row['payment_wa_num'];
+            $telegram_link = $row['telegram_link'];
+            $contact_email = $row['contact_email'];
+            $address = $row['address'];
+            ?>
+        </p>
         <header class="header">
-            <h1 id="title" class="text-center">Update Premium Plan</h1>
             <!-- <p id="description" class="text-center">
                 Thank you for taking the time to help us improve the platform
             </p> -->
         </header>
         <div class="form-wrap">	
             <form id="survey-form" action="" method="post">
-                
-                <div class="form-group">
-                    <label id="name-label" for="name">Plan name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter plan title" value="<?= $name ?>" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label id="email-label" for="email">Price <small>(taka)</small></label>
-                    <input type="number" name="price" id="email" placeholder="1200" class="form-control" value="<?= $price ?>" required>
-                </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="num-task">Number of Task</label>
-                            <input type="number" name="num-task" id="num-task" placeholder="7" class="form-control" value="<?= $num_task ?>" required>
+                            <label for="b_number">Bkash Number</label>
+                            <input type="number" name="b_number" id="b_number" placeholder="Enter bkash number"
+                            class="form-control" value="<?= $b_number ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="task-in">Task income <small>(taka)</small></label>
-                            <input type="number" name="task-in" id="task-in" placeholder="50" class="form-control" value="<?= $task_in ?>" required>
+                            <label for="n_number">Nagad Number</label>
+                            <input type="number" name="n_number" id="n_number" placeholder="Enter nagad number"
+                            class="form-control" value="<?= $n_number ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="1st">1st Genaretion <small>(taka)</small></label>
-                            <input type="number" name="1st" value="<?= $_1st ?>" id="1st" placeholder="50" class="form-control" required>
+                            <label for="contact_number">Contact Number</label>
+                            <input type="number" name="contact_number" id="contact_number" placeholder="Enter contact number"
+                            class="form-control" value="<?= $contact_number ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="2nd">2nd Genaretion <small>(taka)</small></label>
-                            <input type="number" name="2nd" id="2nd" value="<?= $_2nd ?>" placeholder="50" class="form-control" required>
+                            <label for="password_wa_num">Password help <small>(whatsapp)</small></label>
+                            <input type="number" name="password_wa_num" id="password_wa_num" placeholder="Enter whatsapp number"
+                            class="form-control"  value="<?= $password_wa_num ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="3rd">3rd Genaretion <small>(taka)</small></label>
-                            <input type="number" name="3rd" id="3rd" value="<?= $_3rd ?>" placeholder="50" class="form-control" required>
+                            <label for="payment_wa_num">Payment Help <small>(whatsapp)</small></label>
+                            <input type="number" name="payment_wa_num" id="payment_wa_num" placeholder="Enter whatsapp number"
+                            class="form-control" value="<?= $payment_wa_num ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="4th">4th Genaretion <small>(taka)</small></label>
-                            <input type="number" name="4th" id="4th" value="<?= $_4th ?>" placeholder="50" class="form-control" required>
+                            <label for="telegram_link">Telegram Channal</label>
+                            <input type="text" name="telegram_link" id="telegram_link" placeholder="Enter telegram link"
+                            class="form-control" value="<?= $telegram_link ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="5th">5th Genaretion <small>(taka)</small></label>
-                            <input type="number" name="5th" id="5th" placeholder="50"  value="<?= $_5th ?>"class="form-control" required>
+                            <label for="contact_email">Contact Email</label>
+                            <input type="email" name="contact_email" id="contact_email" placeholder="Enter contact email"
+                            class="form-control" value="<?= $contact_email ?>" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="validity">Validity <small>(day)</small></label>
-                            <input type="number" name="validity" id="validity" placeholder="30" value="<?= $validity ?>" class="form-control" required>
+                            <label for="address">Address</label>
+                            <input type="text" name="address" id="address" placeholder="Enter address"
+                            class="form-control" value="<?= $address ?>" required>
                         </div>
                     </div>
                 </div>
-                
                 <div class="row">
                     <div class="col-md-4">
-                        <button type="submit" id="submit" class="btn btn-primary btn-block">Submit Plan</button>
+                        <button type="submit" id="submit" class="btn btn-primary btn-block">Update Details</button>
                     </div>
                 </div>
 
