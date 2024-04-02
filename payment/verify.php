@@ -1,6 +1,6 @@
 
 <?php
-
+$trx = $_REQUEST['trx'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -12,11 +12,11 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => false,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => array('transaction_id' => 'JJTG987652'),
+  CURLOPT_POSTFIELDS => array('transaction_id' => "$trx"),
   CURLOPT_HTTPHEADER => array(
-    'app-key: ##########',
-    'secret-key: #####',
-    'host-name: ###',
+    'app-key: yDQqB1dZ9hVqB',
+    'secret-key: 57992403',
+    'host-name: myearningbd.com',
   ),
 ));
 
