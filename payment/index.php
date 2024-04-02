@@ -12,10 +12,15 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => false,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => array('cus_name' => 'demo','cus_email' => 'demo@gmail.com','amount' => '50','success_url' => 'https://myearningbd.com/payment/success.php','cancel_url' => 'https://myearningbd.com/payment/cancel.php'),
+  CURLOPT_POSTFIELDS => array(
+    'cus_name' => 'demo',
+    'cus_email' => 'demo@gmail.com',
+    'amount' => '50',
+    'success_url' => 'https://myearningbd.com/payment/success.php',
+    'cancel_url' => 'https://myearningbd.com/payment/cancel.php'),
   CURLOPT_HTTPHEADER => array(
-    'app-key: jFB2VkRX9aY5lrkF3SqiV65',
-    'secret-key: 88682188',
+    'app-key: F2SdLW1AT1PRFoZ1iiL3baL',
+    'secret-key: 49385903',
     'host-name: myearningbd.com',
   ),
 ));

@@ -14,8 +14,8 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS => array('transaction_id' => "$trx"),
   CURLOPT_HTTPHEADER => array(
-    'app-key: jFB2VkRX9aY5lrkF3SqiV65',
-    'secret-key: 88682188',
+    'app-key: F2SdLW1AT1PRFoZ1iiL3baL',
+    'secret-key: 49385903',
     'host-name: myearningbd.com',
   ),
 ));
