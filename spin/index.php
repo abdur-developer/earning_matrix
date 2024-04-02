@@ -26,7 +26,7 @@ $targetDate = $row["last_spin"];
             height: 300px;
             margin-top: 50px;
         }
-        .mainbox:after{
+        /* .mainbox:after{
             position: absolute;
             content: "";
             width: 100%;
@@ -36,7 +36,7 @@ $targetDate = $row["last_spin"];
             left: 5%;
             top: 48%;
             transform: rotate(90deg);
-        }
+        } */
         .box{
             width: 100%;
             height: 100%; 
@@ -171,7 +171,6 @@ $targetDate = $row["last_spin"];
             box-shadow: 0 5px 20px #000;
             font-weight: bolder;
             font-size: 22px;
-            cursor: pointer;
             z-index: 1000;
         }
         .spin:active{
@@ -222,6 +221,9 @@ $targetDate = $row["last_spin"];
             padding: 8px 16px;
             margin-left: 10px;
         }
+        #spin{
+            z-index: 1;
+        }
     </style>
 </head>
 <section style="justify-content: center; display: flex;">
@@ -244,18 +246,14 @@ $targetDate = $row["last_spin"];
                     <span class="font span4"><h5><b>Lucky</b></h5></span>
                     <span class="font span5"><h5><b>Lucky</b></h5></span>
                 </div>
-                <button class="spin" onclick="openConfirmation()">SPIN</button>
+                <button class="spin">O</button>
             </div>
         </div>
     </div>
     <audio class="hidden" controls="controls" id="hoory" src="assets/hoory.mp3" type="audio/mp3"></audio>
     <audio class="hidden" controls="controls" id="wheel" src="assets/wheel.mp3" type="audio/mp3"></audio>
-        <div style="text-align: center; justify-content: center;">
-            <!-- <h1>Timer</h1>
-            <p id="countdown"></p> -->
-        </div>
-    </div>
-    <div id="confirmationDialog" class="confirmation-dialog">
+</div>
+<div id="confirmationDialog" class="confirmation-dialog">
         <div class="dialog-content">
             <p>আপনি কি স্পিন এর মাধ্যমে ইনকাম করতে চান...? <br> প্রতি স্পিনের জন্য আপনাকে ১০ টাকা খরচ করতে হবে</p>
             <div class="buttons">
@@ -264,8 +262,18 @@ $targetDate = $row["last_spin"];
             </div>
         </div>
     </div>
+    
+</section>
+<div style="text-align: center; justify-content: center;">
+    <button class="btn btn-success" id="spin"
+    style="cursor: pointer;">Spin Now</button>
+    <!-- <h1>Timer</h1>
+    <p id="countdown"></p> -->
+</div>
 
     <script>
+        document.getElementById('spin').addEventListener('click', openConfirmation);
+        
         const balance = <?= $user['balance'] ?>;
         function openConfirmation() {
             document.getElementById('confirmationDialog').style.display = 'block';
@@ -373,5 +381,4 @@ $targetDate = $row["last_spin"];
 
     }
     </script>
-    </section>
     <!-- daily spin section end -->

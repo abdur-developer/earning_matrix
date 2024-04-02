@@ -100,7 +100,7 @@ if(isset($_REQUEST['method'])){
 
                         <input name="q" value="withdraw" hidden>
                     </div>
-                    <div class="mt-5">
+                    <!-- <div class="mt-5">
                         <label htmlFor="" class="ml-2 text-success er">
                             কত টাকা Withdraw করবেন <span class="text-danger">*</span>
                             
@@ -111,7 +111,56 @@ if(isset($_REQUEST['method'])){
                             <option value="500">৳ 500</option>
                             <option value="1000">৳ 1000</option>
                         </select>
-                        <!-- <p class="text-primary my-3 text-end"><a href="../link/withdraw_policy.html" style="text-decoration: none;">withdraw policy</a></p> -->
+                        <p class="text-primary my-3 text-end"><a href="../link/withdraw_policy.html" style="text-decoration: none;">withdraw policy</a></p>
+                    </div> -->
+                    <div class="mt-5">
+                        <label htmlFor="" class="ml-2 text-success er">
+                        টাকার পরিমান সিলেক্ট করুন<span class="text-danger">*</span>
+                            
+                        </label>
+                        <div class="row radio-group text-center">
+                                                                
+                            
+                                
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.200 <br />
+                                    <span class="text-warning" style="font-size: 10px">
+                                    (Charge: Tk.10) Low Balance</span>
+                                </span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.400 <br />
+                                    <span class="text-warning" style="font-size: 10px">
+                                    (Charge: Tk.20) Low Balance</span>
+                                </span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.500 <br />
+                                    <span class="text-warning" style="font-size: 10px">
+                                    (Charge: Tk.25) Low Balance</span>
+                                </span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.1000 <br />
+                                    <span class="text-warning" style="font-size: 10px">
+                                    (Charge: Tk.50) Low Balance</span>
+                                </span>
+                                </div>
+                            </label>
+                        
+                                                                    
+                        </div>
                     </div>
                     <!-- =================Submit starts here==================== -->
                     <?php

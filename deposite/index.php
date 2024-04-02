@@ -159,6 +159,48 @@ $nagad = $row['n_number'];
                         <label htmlFor="" class="ml-2 text-success er">
                             কত টাকা ডিপোজিট করেছেন *
                         </label>
+                        <div class="row radio-group text-center">
+                                                                
+                            
+                                
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.100</span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.200</span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.400</span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.500</span>
+                                </div>
+                            </label>
+                            <label class="col-6 col-lg-4 col-xl-3 my-1 radio-container">
+                                <div class="bg-success text-white rounded p-1">
+                                <div><input type="radio" name="amount" value="200" /></div>
+                                <span class="radio-label">Tk.1000</span>
+                                </div>
+                            </label>
+                        
+                                                                    
+                        </div>
+                    </div>
+                    <!-- <div class="mt-5">
+                        <label htmlFor="" class="ml-2 text-success er">
+                            কত টাকা ডিপোজিট করেছেন *
+                        </label>
                         <select name="amount" style="width: 100%" class="border p-2" required>
                             <option value="100">৳100</option>
                             <option value="200">৳200</option>
@@ -166,7 +208,7 @@ $nagad = $row['n_number'];
                             <option value="500">৳500</option>
                             <option value="1000">৳1000</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="mt-5">
                         <label htmlFor="" class="ml-2 text-success er">
                             স্ক্রিনশর্ট টি দিন <span class="text-danger">*</span>
